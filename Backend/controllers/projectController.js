@@ -63,4 +63,10 @@ const getProjectById = async(req,res)=>{
     }
 };
 
+const updateProject = async(req,res)=>{
+    const{name,description,status,teamMembers} = req.body;
+
+    const project = await Project
+}
+
 module.exports = {createProject,getAllProjects,getProjectById};
