@@ -65,8 +65,38 @@ const getProjectById = async(req,res)=>{
 
 const updateProject = async(req,res)=>{
     const{name,description,status,teamMembers} = req.body;
+    
+    try{
+    let project = await Project.findById(req.params.id);
+    if(!project){
+        return res.status(404).json({msg:"Project not Found"});
+    }
 
-    const project = await Project
-}
+    project.name = name ||project.name;
+    project.description = description ||project.description;
+    project.status = status ||project.status;
+    project.teamMembers = teamMembers ||project.teamMembers;
 
-module.exports = {createProject,getAllProjects,getProjectById};
+    await project.save();
+    res.json(project);
+    }catch(err){
+        console.error(err.message);
+        res.status(500).send("Server Error");
+    }
+};
+
+const deleteProject = async(req,res)=>{
+        try{
+        const project = await Project.findByIdAndDelete(req.params.id);
+        if(!project){
+            return res.status(404).json({msg:"Project not Found"});
+        }
+        res.json({msg:"Project removed"});
+    }catch(err){
+        console.error(err.message);
+        res.status(500).send("Server Error");
+    }
+
+};
+    
+module.exports = {createProject,getAllProjects,getProjectById,updateProject,deleteProject};
