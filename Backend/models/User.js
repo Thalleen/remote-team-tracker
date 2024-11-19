@@ -7,5 +7,5 @@ const userSchema = new Schema({
     password: {type:String, required: true},
     role: {type: String, enum: ['Admin', 'Team Lead', 'Team Member'], default: 'Team Member'}
 })
-
+ 
 module.exports = mongoose.model('User',userSchema);
