@@ -10,7 +10,7 @@ router.get("/project/:projectId",auth,getTasksByProject);
 router.get("/:id",auth,getTaskById);
 
 router.put("/:id",auth,updateTask);
-
+ 
 router.delete("/:id",auth,deleteTask);
 
 module.exports = router;
