@@ -8,7 +8,7 @@ const userRoutes = require('./routes/auth')
 const projectRoutes = require("./routes/projects");
 const taskRoutes = require("./routes/tasks")
 
-connectDB();
+connectDB(); 
 
 app.use(cors())
 app.use(express.json());
