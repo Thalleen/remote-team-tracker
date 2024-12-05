@@ -22,7 +22,7 @@ const createTask = async(req,res)=>{
 
         const task = new Task({
             title,
-            description,
+            description, 
             projectId,
             assignedTo: assignedToId,
             status,
