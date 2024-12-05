@@ -11,7 +11,7 @@ const createTask = async(req,res)=>{
         const userMappings = {};
 
         users.forEach(user=>{
-            userMappings[user.name] = user._id;
+            userMappings[user.name] = user._id; 
         });
 
         const assignedToId = userMappings[assignedTo];
