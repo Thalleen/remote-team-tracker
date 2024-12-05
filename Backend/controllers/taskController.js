@@ -3,7 +3,7 @@ const User = require("../models/User");
 
 // Create a new task
 const createTask = async(req,res)=>{
-    const{title,description,projectId,assignedTo,status,priority,dueDate} = req.body;
+    const{title,description,projectId,assignedTo,status,priority,dueDate} = req.body; 
 
     try{
         const users = await User.find({});
