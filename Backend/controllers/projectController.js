@@ -1,6 +1,6 @@
 const Project = require("../models/Project");
 const User = require("../models/User");
-const mongoose = require("mongoose");
+const mongoose = require("mongoose"); 
  
 const createProject = async (req,res)=>{ 
     const {name,description,teamMembers} = req.body;
