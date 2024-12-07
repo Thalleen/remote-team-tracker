@@ -25,7 +25,7 @@ const registerUser = async(req,res)=>{
         // Hash the password before saving
         const salt = await bcrypt.genSalt(10);
         user.password = await bcrypt.hash(password,salt);
-
+ 
         // Save user to database
         await user.save();
 
