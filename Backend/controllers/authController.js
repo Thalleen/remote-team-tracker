@@ -7,7 +7,7 @@ const User = require("../models/User");
 const registerUser = async(req,res)=>{
     const {name,email,password,role} = req.body;
 
-    try{
+    try{ 
         // Check if user already exists
         let user = await User.findOne({email});
         if(user){
