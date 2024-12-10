@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const {Schema} = mongoose;
 
-const projectSchema = new Schema({
+const projectSchema = new Schema({ 
     name: {type:String, required:true},
     description: {type:String},
     status: {type:String,enum:["Not Started","In Progress","Completed"],default:"Not Started"},
